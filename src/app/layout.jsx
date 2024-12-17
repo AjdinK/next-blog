@@ -11,11 +11,11 @@ export default function RootLayout({ children }) {
               Home
             </Link>
             <div>
+              <Link className="nav-link" href="/register">
+                Register
+              </Link>
               <Link className="nav-link" href="/dashboard">
                 Dashboard
-              </Link>
-              <Link className="nav-link" href="/profile">
-                Profile
               </Link>
             </div>
           </nav>
