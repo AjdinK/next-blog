@@ -2,6 +2,7 @@
 
 import { getCollection } from "@/lib/db";
 import { RegisterFormSchema } from "@/lib/rules";
+import { createSession } from "@/lib/session";
 import bcrypt from "bcrypt";
 import { redirect } from "next/navigation";
 
@@ -45,7 +46,6 @@ export async function register(state, formData) {
     password: hashedPassword,
   });
 
-  //TODO: create session
-
+  await createSession(result.insertedId.toString());
   redirect("/dashboard");
 }
