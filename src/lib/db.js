@@ -1,3 +1,4 @@
+import "server-only";
 const { MongoClient } = require("mongodb");
 import { ServerApiVersion } from "mongodb";
 
