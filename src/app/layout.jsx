@@ -1,6 +1,7 @@
+import Navigation from "@/components/Navigation";
 import "./globals.css";
-import Link from "next/link";
 import { Inter } from "next/font/google";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,22 +14,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.variable}  font-inter`}>
         <header>
-          <nav>
-            <Link className="nav-link" href="/">
-              Home
-            </Link>
-            <div>
-              <Link className="nav-link" href="/register">
-                Register
-              </Link>
-              <Link className="nav-link" href="/dashboard">
-                Dashboard
-              </Link>
-            </div>
-          </nav>
+          <Navigation />
         </header>
         <main>{children}</main>
-        <footer>Footer</footer>
+        <Footer />
       </body>
     </html>
   );
