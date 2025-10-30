@@ -19,7 +19,9 @@ export async function register(state, formData) {
     };
   }
 
+
   const { email, password } = validatedFields.data;
+
   const userCollection = await getCollection("users");
   if (!userCollection) {
     return {
