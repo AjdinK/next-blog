@@ -29,3 +29,12 @@ export const RegisterFormSchema = z
       });
     }
   });
+
+  export const BlogPostSchema = z.object({
+    title: string()
+      .min(1, { message: "Title field is required." })
+      .max(100, { message: "Title can't be more than 100 characters" })
+      .trim(),
+
+    content: string().min(1, { message: "Content field is required." }).trim(),
+  });
