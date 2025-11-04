@@ -93,7 +93,6 @@ export async function login (state,formData) {
         }
       }
   
-      createSession(existingUser._id.toString());
-      console.log(existingUser);
+     await createSession(existingUser._id.toString());
       redirect("/dashboard");
 }
