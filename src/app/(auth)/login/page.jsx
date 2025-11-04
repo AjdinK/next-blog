@@ -2,9 +2,10 @@
 
 import { useActionState } from "react";
 import Link from "next/link";
+import { login } from "@/actions/auth";
 
 export default function Login() {
-  const [state, action, isPending] = useActionState(() => {}, undefined);
+  const [state, action, isPending] = useActionState(login, undefined);
 
   return (
     <div className="container w-1/2">
@@ -23,6 +24,10 @@ export default function Login() {
           <label htmlFor="password">Password</label>
           <input type="password" name="password" />
         </div>
+
+        {state?.errors?.password && (
+          <p className="error">{state.errors.password}</p>
+        )}
 
         <div className="flex items-end gap-4">
           <button disabled={isPending} className="btn-primary">
