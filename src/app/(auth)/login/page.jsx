@@ -23,11 +23,11 @@ export default function Login() {
         <div>
           <label htmlFor="password">Password</label>
           <input type="password" name="password" />
-        </div>
 
-        {state?.errors?.password && (
-          <p className="error">{state.errors.password}</p>
-        )}
+          {state?.errors?.password && (
+            <p className="error">{state.errors.password}</p>
+          )}
+        </div>
 
         <div className="flex items-end gap-4">
           <button disabled={isPending} className="btn-primary">
