@@ -4,7 +4,7 @@ import getAuthUser from "./lib/getAuthUser";
 const protectedRoutes = ["/dashboard", "/posts/create"];
 const publicRoutes = ["/login", "/register"];
 
-export default async function middleware(req) {
+export default async function proxy(req) {
   const path = req.nextUrl.pathname;
   const isProtected =
     protectedRoutes.includes(path) || path.startsWith("/posts/edit/");
