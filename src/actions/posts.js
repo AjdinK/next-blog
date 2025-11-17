@@ -82,14 +82,14 @@ export async function updatePost(state, formData) {
   if (user.userId !== post.userId.toString()) return redirect("/");
 
   // Update the post in DB
-  postsCollection.findOneAndUpdate(
+  await postsCollection.findOneAndUpdate(
     { _id: post._id },
     {
       $set: {
         title: validatedFields.data.title,
         content: validatedFields.data.content,
       },
-    }
+    },
   );
 
   // Redirect
