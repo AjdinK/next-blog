@@ -1,7 +1,17 @@
 {
   "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "checkJs": false,
+    "jsx": "preserve",
+    "module": "esnext",
+    "moduleResolution": "node",
     "paths": {
       "@/*": ["./src/*"]
-    }
-  }
+    },
+    "strict": false,
+    "target": "es2020"
+  },
+  "exclude": ["node_modules"],
+  "include": ["src", "pages", "app", "components", "lib", "hooks"]
 }
